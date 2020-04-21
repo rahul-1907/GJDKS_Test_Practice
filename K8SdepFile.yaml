@@ -1,23 +1,25 @@
 #Deployment
 apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: nginx
+  name: nginx
 spec:
     selector:
         matchLabels:
-        run: nginx
+            run: nginx
     replicas: 2
     template:
         metadata:
-        labels:
-            run: nginx
+            labels:
+                run: nginx
         spec:
             containers:
                 - name: nginx
-                  image: rahulpawardevops/kubproject-test:1.0
-            ports:
-                - containerPort: 80
+                  image: rahulpawardevops/:1.0
+                  ports:
+                    - containerPort: 80
+
                     
 
 ---                    
