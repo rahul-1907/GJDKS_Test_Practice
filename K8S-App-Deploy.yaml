@@ -1,25 +1,26 @@
+#Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
 spec:
-    selector:
-        matchLabels:
-            run: nginx
-    replicas: 2
-    template:
-        metadata:
-            labels:
-                run: nginx
-        spec:
-            containers:
-                - name: nginx
-                  image: rahulpawardevops/nginxtest-2:1.0
-                  ports:
-                    - containerPort: 80
+  selector:
+    matchLabels:
+      run: nginx
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: rahulpawardevops/nginxtest-2:1.0
+      ports:
+        - containerPort: 80
                     
-                    
-                    
+---                    
+#LoadBalancer Service                    
 apiVersion: v1
 kind: Service
 metadata:
@@ -27,9 +28,9 @@ metadata:
   labels:
     run: nginx
 spec:
-    ports:
+  ports:
     - port: 80
       protocol: TCP
-    selector:
+  selector:
         run: nginx
-    type: LoadBalancer
+  type: LoadBalancer
