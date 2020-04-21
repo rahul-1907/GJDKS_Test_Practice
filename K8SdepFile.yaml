@@ -16,7 +16,7 @@ spec:
         spec:
             containers:
                 - name: nginx
-                  image: rahulpawardevops/kubproject-test:1.0
+                  image: rahulpawardevops/kubproject-test
                   ports:
                     - containerPort: 80
 
