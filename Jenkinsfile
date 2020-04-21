@@ -6,7 +6,7 @@ pipeline{
 	stages{
 		stage('Build Docker Image'){
 			steps{
-				sh "docker build . -t rahulpawardevops/kubernetspro:${DOCKER_TAG}"
+				sh "docker build . -t rahulpawardevops/test-project:${DOCKER_TAG}"
 			}
 		}
 	}
